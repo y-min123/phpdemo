@@ -33,3 +33,17 @@ Route::group(['prefix' => '/home/test'],function () {
 
 });
 
+
+//控制器路由
+Route::get('test2','TestController@test2');
+
+Route::get('test3','TestController@test3');
+//分目录控制器路由
+Route::get('admin_test2','Admin\MyController@test2');
+
+//DB 的增删改查
+Route::get('add','TestController@add');
+Route::get('delete','TestController@delete');
+Route::get('mod','TestController@mod');
+Route::get('select','TestController@select');
+
