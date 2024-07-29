@@ -67,18 +67,62 @@ class TestController extends Controller
 
         // 递增递减 increment  decrement 仅针对纯数字
         dump(DB::table('stu') -> where('id','1') ->increment('score',5));
-
     }
 
 
     public  function select ()
     {
-        //1. 取出所有数据
-        $data = DB::table('stu') -> get();
-        //dump($data);
-        foreach ($data as $key => $value) {
-            dump($value -> name);
-        }
+//        //1. 取出所有数据
+//        $data = DB::table('stu') -> get();
+//        //dump($data);
+//        foreach ($data as $key => $value) {
+//            dump($value -> name);
+//        }
+
+//        //id < 3
+//        $data1 = DB::table('stu') -> where('id', '<' ,4) -> get();
+//        dump($data1);
+
+//        // 80 <= score <= 90
+//        $data2 = DB::table('stu') -> where('score', '>=', '80') -> where('score', '<=', '90') -> get();
+//        dump($data2);
+
+//        //id = 1 或者 id = 4
+//        $data3 = DB::table('stu') -> where('id','1') -> orwhere('id','4') -> get();
+//        dump($data3);
+
+//        //返回一条数据
+//        $data4 = DB::table('stu') -> where('id', '<' ,4) -> get() -> first();
+//        dump($data4);
+
+//        //获取某个具体的值 返回的第一行数据score的值，是一个字符串，不是数组
+//        $data5 = DB::table('stu') -> where('id', '<', '4') -> value('score');
+//        dump($data5);
+//        //如果想要返回数组 用pluck
+//        $data6 = DB::table('stu') -> where('id', '<', 4) -> pluck('score');
+//        dump($data6);
+
+
+//        //获取某些字段数据（多个字段）
+//        //注意：where 和 where 的顺序可以调整。 原则是：增删改查，放在最后面就可以！！！
+//        $data7 = DB::table('stu')  -> where('id','<','4') -> select('email', 'score') -> get();
+//        dump($data7);
+
+
+//        //排序
+//        $data8 = DB::table('stu') -> orderBy('score','desc') -> get();
+//        dump($data8);
+
+
+        //分页查询
+        $data9 = DB::table('stu') -> limit(2) -> offset(2) -> get();
+        dump($data9);
+
+
+
+
+
+
     }
 
 
