@@ -38,6 +38,10 @@ Route::group(['prefix' => '/home/test'],function () {
 Route::get('test2','TestController@test2');
 
 Route::get('test3','TestController@test3');
+
+Route::get('test4','TestController@test4');
+
+
 //分目录控制器路由
 Route::get('admin_test2','Admin\MyController@test2');
 

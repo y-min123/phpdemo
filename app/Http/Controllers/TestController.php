@@ -12,6 +12,9 @@ class TestController extends Controller
         phpinfo();
     }
 
+
+
+
     // 接收用户输入
     public  function test3(Request $request)
     {
@@ -32,6 +35,12 @@ class TestController extends Controller
         //4. 是否有某个参数
         $result = request()->has('address');
         var_dump($result);
+    }
+
+
+    public  function test4(Request $request) {
+         //return view('admin/test/test4');
+        return view('admin.test.test4');
     }
 
 
