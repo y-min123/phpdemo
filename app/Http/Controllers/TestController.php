@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Log;
 
 use Illuminate\Support\Facades\URL;
 
+use Illuminate\Support\Facades\Cache;
+
 use DB;
 class TestController extends Controller
 {
@@ -199,8 +201,22 @@ class TestController extends Controller
 //        }
 
 
-        $url = action([TestController::class, 'signtest']);
-        echo $url;
+//        $url = action([TestController::class, 'signtest']);
+//        echo $url;
+
+//        $lock = Cache::lock('foo', 10);
+//        echo '111111';
+//        $lock->block(5);
+//        echo '22222';
+//        $lock->release();
+//        echo '3333';
+
+//        $lock = Cache::lock('foo', 10);
+//        if ($lock->get()) {
+//            // Lock acquired for 10 seconds...
+//            $lock->release();
+//        }
+
     }
 
 
