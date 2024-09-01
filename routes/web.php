@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\URL;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,3 +52,6 @@ Route::get('delete','TestController@delete');
 Route::get('mod','TestController@mod');
 Route::get('select','TestController@select');
 
+Route::get('test/{id}','TestController@test');
+
+Route::get('signtest','TestController@signtest') ->name('sign');

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Log;
+
+use Illuminate\Support\Facades\URL;
+
 use DB;
 class TestController extends Controller
 {
@@ -135,10 +139,71 @@ class TestController extends Controller
     }
 
 
-    public  function delete()
+    public  function delete(Request $request)
     {
+        echo $request->path();
 
+//        Log::error('3333');
+//        Log::info('hello');
+//        Log::alert('alert11111');
+//        Log::error('error11111');
+//        Log::emergency('emergency11111');
     }
+
+    public function test(Request $request, $id)
+    {
+//        echo 'url' . $request->url();
+//        echo 'fullUrl' . $request->fullUrl();
+//        echo 'fullUrlWithQuery' . $request->fullUrlWithQuery(['sort' => '456']);
+
+//        echo 'host:' . $request->getHost() . '=======';
+//        echo 'httpHost:' . $request->getHttpHost() . '=======';
+//        echo 'schemeAndHttpHost:' . $request->getSchemeAndHttpHost() . '=======';
+
+//        $method = $request->method(); //GET
+//        echo $method;
+
+//        $ipAddress = $request->ip();
+//        echo $ipAddress;
+
+//        var_dump($request->all());
+//
+//        var_dump(collect($request->all()));
+
+//        var_dump($request->query());
+
+//        // 获取当前 URL 没有 query string...
+//        echo url()->current();
+//        // 获取当前 URL 包括 query string...
+//        echo url()->full();
+//        // 获取上个请求 URL
+//        echo url()->previous();
+
+
+        echo URL::full();
+    }
+    //验证签名
+    public  function  signtest(Request $request)
+    {
+        //生成签名
+        //$url = URL::signedRoute('sign');
+        //零时路径
+        //$url = URL::temporarySignedRoute('sign', now()->addMinutes(30), []);
+        //echo $url;
+
+//        //验证签名
+//        if (URL::hasValidSignature($request)) {
+//            echo '签名验证通过';
+//        } else {
+//            echo '签名验证失败';
+//        }
+
+
+        $url = action([TestController::class, 'signtest']);
+        echo $url;
+    }
+
+
 
 
 
