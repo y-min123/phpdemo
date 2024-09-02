@@ -211,11 +211,17 @@ class TestController extends Controller
 //        $lock->release();
 //        echo '3333';
 
-//        $lock = Cache::lock('foo', 10);
-//        if ($lock->get()) {
-//            // Lock acquired for 10 seconds...
+        $lock = Cache::lock('foo2', 20);
+
+        if ($lock->get()) {
+            echo '1111111';
+            // Lock acquired for 10 seconds...
 //            $lock->release();
-//        }
+        }else {
+            echo '22222';
+
+        }
+
 
     }
 
